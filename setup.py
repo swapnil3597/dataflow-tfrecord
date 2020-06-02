@@ -8,7 +8,7 @@ NAME = 'tfrecord_util'
 VERSION = '1.0'
 REQUIRED_PACKAGES = [
     'apache-beam[gcp]',
-    'tensorflow==1.14.0',
+    'tensorflow==1.15.2',
     'gcsfs',
     'workflow'
     ]
