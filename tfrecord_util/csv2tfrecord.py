@@ -32,27 +32,12 @@ IMG_SIZE = 28 # TODO: Enter your own int value for square image
 
 PROJ_NAME = 'Your Project Name'
 
+CSV_PATH = 'gs://<bucket-name>/path-to.csv'
 RUNNER = 'DataflowRunner'
 STAGING_LOCATION = 'gs://<bucket-name>/staging/'
 TEMP_LOCATION = 'gs://<bucket-name>/temp/'
 JOB_NAME = 'random-job-name'
 OUTPUT_PATH = 'gs://<bucket-name>/output_path/'
-
-
-def get_args():
-  """
-    Takes arguments from command line
-    ARGS: None
-    Returns: Dictionary
-  """
-  parser = argparse.ArgumentParser()
-  parser.add_argument(
-      '--csv-path',
-      type=str,
-      required=True,
-      help='name of csv file')
-
-  return parser.parse_args()
 
 class DecodeFromTextLineDoFn(beam.DoFn):
   """
@@ -153,11 +138,10 @@ def main():
   """
     Main function to create tfrecords (ETL pipeline)
   """
-  args = get_args()
 
   # --> EXTRACTION <--
   # Read line from csv
-  read_text_line_from_csv = beam.io.ReadFromText(args.csv_path,
+  read_text_line_from_csv = beam.io.ReadFromText(CSV_PATH,
                                                  skip_header_lines=1)
 
   # Decode str line from csv to obtain path and label
@@ -181,7 +165,7 @@ def main():
       num_shards=20)
 
 
-  # TODO: Enter required pipeline arguments
+  # TODO: Enter required pipeline arguments (Method 1)
   pipeline_args = [
       '--runner', RUNNER,
       '--project', PROJ_NAME,

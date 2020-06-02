@@ -1,0 +1,1 @@
+python3 tfrecord_util/csv2tfrecord_train_eval.py
