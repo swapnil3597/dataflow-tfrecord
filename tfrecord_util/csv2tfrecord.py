@@ -17,6 +17,7 @@ import gcsfs
 import numpy as np
 
 import tensorflow as tf
+from tensorflow.python.keras.preprocessing.image import load_img
 
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
@@ -89,7 +90,7 @@ class LoadImageDoFn(beam.DoFn):
     path, label = path_label_tuple
     with self.file_system.open(path) as img_file:
       img = np.array(
-          tf.python.keras.preprocessing.image.load_img(
+          load_img(
               img_file,
               target_size=(self.img_size, self.img_size))
       )
