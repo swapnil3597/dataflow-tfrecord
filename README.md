@@ -1,11 +1,18 @@
 # dataflow-tfrecord
 This repository is a reference ETL Pipeline for creating TF-Records using Apache Beam Python SDK on Google Cloud Dataflow
 
-Inorder to run the pipeline on GOOGLE VM Instance you may run,
-```bash
-bash run.sh
+To run this pipeline: 
+### Step 1:
+First have a csv_file in format in the GCS Bucket,
 ```
-But before running the pipeline make sure you initialize the following variables in `create_tfrecords/create_tfrecords.py`:
+gs://path/img.png,label1
+gs://path/img.png,label12
+...
+```
+and corresponding dummy square images of same size stored in the GCS bucket at correct path.
+
+### Step 2:
+Before running the pipeline make sure you initialize the following variables in `create_tfrecords/create_tfrecords.py`:
 ```python
 # TODO: Initialize below variables
 LABEL_DICT = {
@@ -24,4 +31,10 @@ TEMP_LOCATION = 'gs://<bucket-name>/temp/'
 TEMPLATE_LOCATION = 'gs://<bucket-name>/path/to/template_location/template_name'
 JOB_NAME = 'random-job-name'
 OUTPUT_PATH = 'gs://<bucket-name>/output_path/'
+```
+
+### Step 3:
+Now, inorder to run the pipeline on GOOGLE VM Instance you may run,
+```bash
+bash run.sh
 ```
