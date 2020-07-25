@@ -35,7 +35,7 @@ OUTPUT_PATH = 'gs://<bucket-name>/output_path/'
 ```
 
 ### Step 3:
-Now, inorder to run the pipeline on GOOGLE VM Instance you may run,
+Now, inorder to run the pipeline on Google VM Instance you may run,
 ```bash
 bash run.sh
 ```
