@@ -1,1 +1,1 @@
-python3 tfrecord_util/create_tfrecords.py
+python3 create_tfrecords/create_tfrecords.py
