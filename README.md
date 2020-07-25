@@ -7,7 +7,7 @@ To run this pipeline:
 First have a csv_file in format in the GCS Bucket,
 ```
 gs://path/img.png,label1
-gs://path/img.png,label12
+gs://path/img.png,label2
 ...
 ```
 and corresponding dummy square images of same size stored in the GCS bucket at correct path.
