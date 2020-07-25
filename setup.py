@@ -4,7 +4,7 @@
 import setuptools
 
 
-NAME = 'tfrecord_util'
+NAME = 'create_tfrecords'
 VERSION = '1.0'
 REQUIRED_PACKAGES = [
     'apache-beam[gcp]',
