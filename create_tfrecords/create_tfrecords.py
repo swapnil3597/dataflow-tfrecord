@@ -37,6 +37,7 @@ CSV_PATH = 'gs://<bucket-name>/path-to.csv'
 RUNNER = 'DataflowRunner'
 STAGING_LOCATION = 'gs://<bucket-name>/staging/'
 TEMP_LOCATION = 'gs://<bucket-name>/temp/'
+TEMPLATE_LOCATION = 'gs://<bucket-name>/path/to/template_location/template_name'
 JOB_NAME = 'random-job-name'
 OUTPUT_PATH = 'gs://<bucket-name>/output_path/'
 
@@ -172,6 +173,7 @@ def main():
       '--project', PROJ_NAME,
       '--staging_location', STAGING_LOCATION,
       '--temp_location', TEMP_LOCATION,
+      # '--template_location', TEMPLATE_LOCATION,
       '--job_name', JOB_NAME,
       '--num_workers', '5',
       '--setup_file', './setup.py']
