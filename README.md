@@ -1,6 +1,6 @@
 # dataflow-tfrecord
 This repository is a reference ETL Pipeline for creating TF-Records using Apache Beam Python SDK on Google Cloud Dataflow.
-You may find the blog for his repo [here](https://medium.com/@swapnil3597/etl-pipeline-for-creating-tf-records-using-apache-beam-python-sdk-on-google-cloud-dataflow-93ec2879e524?source=friends_link&sk=3db753be2f7ded476d169265707ad8b7)
+**You may find the blog for his repo [here](https://medium.com/@swapnil3597/etl-pipeline-for-creating-tf-records-using-apache-beam-python-sdk-on-google-cloud-dataflow-93ec2879e524?source=friends_link&sk=3db753be2f7ded476d169265707ad8b7)**
 
 To run this pipeline: 
 ### Step 1:
